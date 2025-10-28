@@ -86,3 +86,13 @@ Route::get('/tentang', function () {
         <footer style='margin-top:30px; font-size:14px; color:#777;'>Project by <b>Hisna Abidah</b></footer>
     ";
 });
+
+// --- ROUTE PROFIL DINAMIS ---
+Route::get('/profil/{nama}', function ($nama) {
+ return view('profil', ['nama' => $nama]);
+});
+
+// --- ROUTE PRODUK DINAMIS (kategori & id) ---
+Route::get('/produk/{kategori}/{id}', function ($kategori, $id) {
+    return "Kategori: <b>$kategori</b> <br> ID Produk: <b>$id</b>";
+});
